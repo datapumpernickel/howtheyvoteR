@@ -1,0 +1,28 @@
+Package: howtheyvoteR
+Title: Access and Cache the Latest Data Releases from HowTheyVote
+Version: 0.0.0.9000
+Maintainer: Paul Bochtler <paulbochtler.gh@gmail.com>
+Authors@R: c(
+  person("Paul", "Bochtler", 
+         email = "paulbochtler.gh@gmail.com", 
+         role = c("aut", "cre", "cph"),
+         comment = c(ORCID = "0000-0002-9146-6185")))
+Description: Provides utilities to programmatically download and cache
+  release assets from the GitHub repository 'HowTheyVote/data'. Uses
+  the 'piggyback' and 'gh' packages to interact with GitHub and caches
+  downloaded data using 'memoise' and 'cachem' following R user cache
+  directory conventions.
+Depends: R (>= 4.1.0)
+Imports:
+    piggyback,
+    gh,
+    tools,
+    rlang,
+    jsonlite,
+    purrr,
+    tibble,
+    readr
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
