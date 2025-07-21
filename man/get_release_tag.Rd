@@ -2,16 +2,23 @@
 % Please edit documentation in R/utils.R
 \name{get_release_tag}
 \alias{get_release_tag}
-\title{Get the Latest Release Tag from GitHub}
+\title{Get the Latest Release Tag from GitHub or Fallback to Cache}
 \usage{
 get_release_tag(repo = "HowTheyVote/data")
 }
 \arguments{
-\item{repo}{GitHub repository in the format "owner/repo"}
+\item{repo}{GitHub repository in the format "owner/repo". Defaults to "HowTheyVote/data".}
 }
 \value{
-A character string with the latest release tag
+A character string with the latest release tag. If offline, the most recent cached tag.
 }
 \description{
-Get the Latest Release Tag from GitHub
+Attempts to retrieve the latest release tag from the specified GitHub repository.
+If no internet connection is available, the function falls back to the most
+recently cached release tag, if available. A warning is issued in that case.
+}
+\examples{
+\dontrun{
+get_release_tag()        # Online mode or fallback to cache
+}
 }

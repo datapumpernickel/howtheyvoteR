@@ -1,3 +1,10 @@
+#' @importFrom utils globalVariables
+
+utils::globalVariables(c(
+  "vote_id", "group_code", "position", "timestamp", "majority_perc", "n", "total_votes", "id"
+))
+
+
 .onAttach <- function(libname, pkgname) {
   path <- get_cache_dir()
   if (!dir.exists(path)) dir.create(path, recursive = TRUE)
@@ -10,3 +17,4 @@
     cli::cli_code("howtheyvoteR::htv_delete_oldest_cached(n = 1)")
   }
 }
+
