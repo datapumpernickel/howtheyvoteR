@@ -2,6 +2,7 @@
 #'
 #' @param repo GitHub repository in the format "owner/repo"
 #' @param dest Base destination directory
+#' @param tag Optional release tag for the dataset (passed to `htv_read_data()`).
 #'
 #' @return A tibble with one row per CSV file and nested metadata for each column
 #' @export
