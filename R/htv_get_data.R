@@ -41,7 +41,7 @@ htv_get_data <- function(
   # Only unzip if export.zip exists and has not been unzipped yet
   marker <- file.path(tag_dir, ".unzipped")
   if (!file.exists(marker) || overwrite) {
-    unzip(zip_path, exdir = tag_dir)
+    utils::unzip(zip_path, exdir = tag_dir)
     file.create(marker)
   }
 

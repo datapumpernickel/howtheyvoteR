@@ -21,7 +21,10 @@ Imports:
     jsonlite,
     purrr,
     tibble,
-    readr
+    readr,
+    dplyr,
+    cli,
+    utils
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
