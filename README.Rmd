@@ -41,7 +41,7 @@ htv_get_data()
 htv_list_metadata()
 
 # Read a specific file from the cache
-votes <- htv_read_csv("votes.csv")
+votes <- htv_read_data("votes.csv")
 ```
 
 ## 📁 Caching behavior
