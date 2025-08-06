@@ -2,30 +2,34 @@
 % Please edit documentation in R/htv_read_data.R
 \name{htv_read_data}
 \alias{htv_read_data}
-\title{Read a CSV from cached release}
+\title{Read a CSV from Cached GitHub Release}
 \usage{
 htv_read_data(
   file,
   repo = "HowTheyVote/data",
   tag = "latest",
   dest = get_cache_dir(),
+  verbose = F,
   ...
 )
 }
 \arguments{
-\item{file}{CSV filename (e.g. "data.csv")}
+\item{file}{CSV filename (e.g. \code{"data.csv"}).}
 
-\item{repo}{GitHub repo "owner/repo"}
+\item{repo}{GitHub repository in \code{"owner/repo"} format. Default is \code{"HowTheyVote/data"}.}
 
-\item{tag}{Release tag ("latest" by default)}
+\item{tag}{Release tag to read from. Defaults to \code{"latest"}.}
 
-\item{dest}{Cache dir (defaults via get_cache_dir())}
+\item{dest}{Path to the cache directory. Defaults to \code{get_cache_dir()}.}
 
-\item{...}{Passed to readr::read_csv}
+\item{verbose}{Logical; if \code{TRUE}, shows column type messages from \code{readr::read_csv()}.}
+
+\item{...}{Additional arguments passed to \code{readr::read_csv()}.}
 }
 \value{
-A tibble or data.frame
+A tibble or data.frame read from the specified CSV.
 }
 \description{
-Read a CSV from cached release
+This function ensures that the specified release tag is downloaded and unzipped
+into the local cache directory. It then reads a CSV file from that cached data.
 }

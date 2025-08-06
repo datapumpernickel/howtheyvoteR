@@ -19,6 +19,8 @@ htv_get_data <- function(
     tag <- get_release_tag(repo)
   }
 
+  cli::cli_inform("Using data release tag: {.strong {tag}}")
+
   tag_dir <- file.path(dest, tag)
   if (!dir.exists(tag_dir)) {
     dir.create(tag_dir, recursive = TRUE)
@@ -28,7 +30,7 @@ htv_get_data <- function(
 
   # If file doesn't exist or overwrite is TRUE, download it
   if (!file.exists(zip_path) || overwrite) {
-    piggyback::pb_download(
+        piggyback::pb_download(
       file = "export.zip",
       repo = repo,
       tag = tag,
@@ -41,6 +43,7 @@ htv_get_data <- function(
   # Only unzip if export.zip exists and has not been unzipped yet
   marker <- file.path(tag_dir, ".unzipped")
   if (!file.exists(marker) || overwrite) {
+    cli::cli_inform("Unzipping data to {.path {tag_dir}}")
     utils::unzip(zip_path, exdir = tag_dir)
     file.create(marker)
   }

@@ -68,5 +68,6 @@ htv_delete_oldest_cached <- function(n = 2, path = get_cache_dir()) {
   to_delete <- utils::head(sort(tags), n)
   full_paths <- file.path(path, to_delete)
   unlink(full_paths, recursive = TRUE, force = TRUE)
+  cli::cli_inform("Deleted oldest cached tags: {.strong {to_delete}}")
   invisible(full_paths)
 }
